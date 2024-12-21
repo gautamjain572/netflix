@@ -28,14 +28,14 @@ export default function Navbar() {
                 <Link href="/home" className="w-32">
                     <Image src={Logo} alt="Netflix Logo" priority />
                 </Link>
-                <ul className="lg:flex gap-x-4 ml-14 hidden">
+                <ul className="lg:flex gap-x-4 ml-14 hidden cursor-pointer">
                     {
                         links.map((link, index) => (
                             <div key={index}>
                                 {
                                     pathName === link.href
                                         ? <li><Link href={link.href} className="text-white font-semibold underline text-sm">{link.name}</Link></li>
-                                        : <li><Link href={link.href} className="text-gray-300 font-normal text-sm">{link.name}</Link></li>
+                                        : <li><Link href={link.href} className="text-gray-300 font-normal text-sm hover:text-white">{link.name}</Link></li>
                                 }
                             </div>
                         ))

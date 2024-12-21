@@ -1,10 +1,4 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, } from "@/components/ui/dialog";
 
 interface iAppProps {
   title: string;
@@ -17,16 +11,7 @@ interface iAppProps {
   duration: number;
 }
 
-export default function PlayVideoModal({
-  changeState,
-  overview,
-  state,
-  title,
-  youtubeUrl,
-  age,
-  duration,
-  release,
-}: iAppProps) {
+export default function PlayVideoModal({changeState,overview,state,title,youtubeUrl,age,duration,release,}: iAppProps) {
   return (
     <Dialog open={state} onOpenChange={() => changeState(!state)}>
       <DialogContent className="sm:max-w-[425px]">

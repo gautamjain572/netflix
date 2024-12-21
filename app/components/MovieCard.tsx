@@ -1,6 +1,5 @@
 "use client";
-
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Heart, PlayCircle } from "lucide-react";
 import PlayVideoModal from "./PlayVideoModal";
 import { useState } from "react";
@@ -19,19 +18,11 @@ interface iAppProps {
   time: number;
 }
 
-export function MovieCard({
-  movieId,
-  overview,
-  title,
-  wachtListId,
-  watchList,
-  youtubeUrl,
-  age,
-  time,
-  year,
-}: iAppProps) {
+export function MovieCard({movieId,overview,title,wachtListId,watchList,youtubeUrl,age,time,year,}: iAppProps) {
+
   const [open, setOpen] = useState(false);
   const pathName = usePathname();
+
   return (
     <>
       <button onClick={() => setOpen(true)} className="-mt-14">
@@ -62,14 +53,10 @@ export function MovieCard({
         <h1 className="font-bold text-lg line-clamp-1">{title}</h1>
         <div className="flex gap-x-2 items-center">
           <p className="font-normal text-sm">{year}</p>
-          <p className="font-normal border py-0.5 px-1 border-gray-200 rounded text-sm">
-            {age}+
-          </p>
+          <p className="font-normal border py-0.5 px-1 border-gray-200 rounded text-sm">{age}+</p>
           <p className="font-normal text-sm">{time}h</p>
         </div>
-        <p className="line-clamp-1 text-sm text-gray-200 font-light">
-          {overview}
-        </p>
+        <p className="line-clamp-1 text-sm text-gray-200 font-light">{overview}</p>
       </div>
 
       <PlayVideoModal

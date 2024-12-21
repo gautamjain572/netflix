@@ -1,5 +1,4 @@
 "use server";
-
 import { revalidatePath } from "next/cache";
 import prisma from "./utils/db";
 import { getServerSession } from "next-auth";
